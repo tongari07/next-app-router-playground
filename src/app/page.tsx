@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { CategoriesCard } from "@/components/categories-card";
 import { Header } from "@/components/header";
 import { NewPosts } from "@/components/new-posts";
 import { ProfileCard } from "@/components/profile-card";
@@ -14,40 +14,7 @@ export default function Home() {
         </main>
         <aside className="space-y-6">
           <ProfileCard />
-          <Card>
-            <CardHeader>
-              <CardTitle>カテゴリー</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-2">
-                <li>
-                  <a href="#" className="text-blue-600 hover:underline">
-                    テクノロジー
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-blue-600 hover:underline">
-                    プログラミング
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-blue-600 hover:underline">
-                    AI・機械学習
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-blue-600 hover:underline">
-                    ウェブ開発
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-blue-600 hover:underline">
-                    モバイルアプリ
-                  </a>
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
+          <CategoriesCard />
         </aside>
       </div>
     </div>
