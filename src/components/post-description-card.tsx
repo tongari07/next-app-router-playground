@@ -7,7 +7,7 @@ import { Button } from "./ui/button";
 type PostDescriptionCard = {
   id: string;
   title: string;
-  description: string;
+  description?: string;
 };
 
 export const PostDescriptionCard = ({ id, title, description }: PostDescriptionCard) => {

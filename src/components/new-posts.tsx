@@ -1,25 +1,29 @@
+import { prisma } from "@/lib/prisma";
 import { PostDescriptionCard } from "./post-description-card";
+import { Prisma } from "@prisma/client";
 
-const posts = [
-  {
-    id: "1",
-    title: "人工知能の未来：2024年の展望",
-    description:
-      "人工知能（AI）技術は急速に進化し続けており、2024年にはさらなる革新が期待されています。本記事では、AIの最新トレンドや、ビジネス、医療、教育分野での応用について詳しく解説します。",
-  },
-  {
-    id: "2",
-    title: "持続可能な都市開発：グリーンテクノロジーの役割",
-    description:
-      "気候変動対策が急務となる中、持続可能な都市開発におけるグリーンテクノロジーの重要性が高まっています。本記事では、スマートシティプロジェクトや再生可能エネルギーの活用事例を紹介します。",
-  },
-];
+const getPosts = async () => {
+  const postDescription = Prisma.validator<Prisma.PostSelect>()({
+    id: true,
+    title: true,
+    description: true,
+  });
 
-export const NewPosts = () => {
+  return await prisma.post.findMany({ select: postDescription });
+};
+
+export const NewPosts = async () => {
+  const posts = await getPosts();
+
   return (
     <>
-      {posts.map((post) => (
-        <PostDescriptionCard key={post.id} {...post} />
+      {posts.map(({ id, title, description }) => (
+        <PostDescriptionCard
+          key={id}
+          id={String(id)}
+          title={title}
+          description={description ?? undefined}
+        />
       ))}
     </>
   );
