@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Header } from "@/components/header";
-import { Button } from "@/components/ui/button";
+import { NewPosts } from "@/components/new-posts";
 
 export default function Home() {
   return (
@@ -10,30 +10,7 @@ export default function Home() {
       <div className="grid grid-cols-1 gap-12 px-4 py-8 sm:px-6 md:grid-cols-[1fr_300px] lg:grid-cols-[1fr_250px] lg:px-8 xl:grid-cols-[1fr_300px]">
         <main className="space-y-6">
           <h1 className="text-3xl font-bold">最新の記事</h1>
-          <Card>
-            <CardHeader>
-              <CardTitle>人工知能の未来：2024年の展望</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p>
-                人工知能（AI）技術は急速に進化し続けており、2024年にはさらなる革新が期待されています。
-                本記事では、AIの最新トレンドや、ビジネス、医療、教育分野での応用について詳しく解説します。
-              </p>
-              <Button className="mt-4">続きを読む</Button>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle>持続可能な都市開発：グリーンテクノロジーの役割</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p>
-                気候変動対策が急務となる中、持続可能な都市開発におけるグリーンテクノロジーの重要性が
-                高まっています。本記事では、スマートシティプロジェクトや再生可能エネルギーの活用事例を紹介します。
-              </p>
-              <Button className="mt-4">続きを読む</Button>
-            </CardContent>
-          </Card>
+          <NewPosts />
         </main>
         <aside className="space-y-6">
           <Card>
@@ -46,7 +23,7 @@ export default function Home() {
                 <AvatarFallback>YT</AvatarFallback>
               </Avatar>
               <h2 className="mt-4 text-lg font-semibold">山田太郎</h2>
-              <p className="text-muted-foreground text-sm">テクノロジーブロガー</p>
+              <p className="text-sm text-muted-foreground">テクノロジーブロガー</p>
             </CardContent>
           </Card>
           <Card>
