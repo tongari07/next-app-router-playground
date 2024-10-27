@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Header } from "@/components/header";
 import { NewPosts } from "@/components/new-posts";
+import { ProfileCard } from "@/components/profile-card";
 
 export default function Home() {
   return (
@@ -13,19 +13,7 @@ export default function Home() {
           <NewPosts />
         </main>
         <aside className="space-y-6">
-          <Card>
-            <CardHeader>
-              <CardTitle>プロフィール</CardTitle>
-            </CardHeader>
-            <CardContent className="flex flex-col items-center">
-              <Avatar className="h-24 w-24">
-                <AvatarImage src="/placeholder.svg?height=96&width=96" alt="プロフィール画像" />
-                <AvatarFallback>YT</AvatarFallback>
-              </Avatar>
-              <h2 className="mt-4 text-lg font-semibold">山田太郎</h2>
-              <p className="text-sm text-muted-foreground">テクノロジーブロガー</p>
-            </CardContent>
-          </Card>
+          <ProfileCard />
           <Card>
             <CardHeader>
               <CardTitle>カテゴリー</CardTitle>
