@@ -70,3 +70,11 @@ export const posts = [
     `,
   },
 ] satisfies Array<Prisma.PostUpdateInput>;
+
+export const categories = [
+  { name: "テクノロジー" },
+  { name: "プログラミング" },
+  { name: "AI・機械学習" },
+  { name: "ウェブ開発" },
+  { name: "モバイルアプリ" },
+] satisfies Array<Prisma.CategoryUpdateInput>;

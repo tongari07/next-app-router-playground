@@ -1,9 +1,9 @@
 import { PrismaClient } from "@prisma/client";
-import { posts, user } from "./data";
+import { categories, posts, user } from "./data";
 
 const prisma = new PrismaClient();
 
-async function main() {
+const upsertUser = async () => {
   const result = await prisma.user.upsert({
     where: { email: "sample@example.com" },
     update: {},
@@ -16,6 +16,19 @@ async function main() {
   });
 
   console.log(result);
+};
+
+const createCategories = async () => {
+  const result = await prisma.category.createMany({
+    data: categories,
+  });
+
+  console.log(result);
+};
+
+async function main() {
+  upsertUser();
+  createCategories();
 }
 
 main()
