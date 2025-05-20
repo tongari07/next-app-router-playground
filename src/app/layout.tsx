@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+// Set revalidate to 0 to force dynamic rendering at the layout level
+export const revalidate = 0;
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -22,11 +25,18 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Add timestamp to show when the layout is rendered
+  const timestamp = new Date().toISOString();
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <div className="bg-amber-200 p-2 text-sm border-b border-amber-400 text-gray-900">
+          <strong>Layout rendered at:</strong>{" "}
+          <span className="font-mono">{timestamp}</span>
+        </div>
         {children}
       </body>
     </html>

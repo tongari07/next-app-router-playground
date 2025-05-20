@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -49,6 +50,15 @@ export default function Home() {
           >
             Read our docs
           </a>
+        </div>
+
+        <div className="grid gap-4 w-full max-w-md">
+          <Link
+            href="/cache-demo"
+            className="bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-5 rounded-lg text-center transition-colors"
+          >
+            Data Cache Demo
+          </Link>
         </div>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
