@@ -59,6 +59,12 @@ export default function Home() {
           >
             Data Cache Demo
           </Link>
+          <Link
+            href="/image-demo"
+            className="bg-purple-500 hover:bg-purple-600 text-white font-medium py-3 px-5 rounded-lg text-center transition-colors"
+          >
+            Image Component Demo
+          </Link>
         </div>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
